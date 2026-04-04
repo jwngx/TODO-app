@@ -1,28 +1,29 @@
-const input=document.getElementById('userInput');
-const submit=document.getElementById('submitBtn');
-const todoList=document.getElementById('todoList');
+const input = document.getElementById('userInput');
+const submit = document.getElementById('submitBtn');
+const todoList = document.getElementById('todoList');
 
-submit.addEventListener('click',(e)=>{
+submit.addEventListener('click', (e) => {
     e.preventDefault();
-    const text =input.value.trim();
-    if (text==="")return;
-    const li=document.createElement('li');
+    const text = input.value.trim();
+    if (text === "") return;
+    const formattedText = text.charAt(0).toUpperCase() + text.slice(1);
+    const li = document.createElement('li');
     li.classList.add('li_items');
-    const checkbox=document.createElement('input');
+    const checkbox = document.createElement('input');
     checkbox.classList.add('checkbox');
-    checkbox.type='checkbox';
-    const span =document.createElement('span');
-    span.innerText=text;
+    checkbox.type = 'checkbox';
+    const span = document.createElement('span');
+    span.innerText = formattedText;
     span.classList.add('todoTaskText')
 
-    checkbox.addEventListener('change',()=>{
-        span.classList.toggle('done',checkbox.checked);
+    checkbox.addEventListener('change', () => {
+        span.classList.toggle('done', checkbox.checked);
     });
-    const delBtn=document.createElement('button');
+    const delBtn = document.createElement('button');
     delBtn.classList.add('del');
-    delBtn.innerText='Delete';
+    delBtn.innerText = 'Delete';
 
-    delBtn.addEventListener('click',()=>{
+    delBtn.addEventListener('click', () => {
         li.remove();
     });
 
@@ -30,5 +31,5 @@ submit.addEventListener('click',(e)=>{
     li.appendChild(span);
     li.appendChild(delBtn);
     todoList.appendChild(li);
-    input.value='';
+    input.value = '';
 });
