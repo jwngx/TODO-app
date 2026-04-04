@@ -1,0 +1,70 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* border: 1px solid; */
+}
+body{
+    display: flex;
+    height: 100%;
+}
+.sidebar{
+    background-color: cadetblue;
+    width: 100px;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+}
+.cardContainer{
+    flex: 1;
+    display: flex;  
+    align-items: flex-start;
+    justify-content: center;
+    height: 100%;
+}
+.innerCardContainer{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    width: 500px;
+    height: auto;
+}
+.input_submit_div{
+    background-color: burlywood;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+.userInput{
+    flex: 1;
+}
+.submitBtn{
+    width: 90px;
+}
+.submitBtn,.userInput{
+    height: 40px;
+}
+.todoList{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.li_items{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    height: 40px;
+    gap: 12px;
+    background-color: antiquewhite;
+}
+.todoTaskText{
+    flex: 1;
+}
+.done{
+    text-decoration: line-through;
+}
