@@ -51,3 +51,9 @@ function handleTodo(e) {
     input.value = '';
 }
 submit.addEventListener('click', handleTodo)
+
+// LIGHT MODE // DARK MODE
+const darkmode = document.getElementById('toggle')
+toggle.addEventListener('change', () => {
+    document.body.classList.toggle('dark');
+})

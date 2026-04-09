@@ -98,7 +98,51 @@ body {
     justify-content: center;
     height: 100%;
 }
-
+.lightMode_container{
+    display: flex;
+    justify-content: center;   
+    align-items: center;
+    transition: 0.4s;
+    font-size: 1.5rem;
+}
+body.dark {
+    background-color: black;
+}
+#toggle{
+    display: none;
+}
+.toggle_btn{
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 70px;
+    height: 35px;
+    border: 1px solid;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+.toggle_btn::before{
+    content: '☀️';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: white;
+    border-radius: 50%;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+}
+#toggle:checked + .toggle_btn{
+    background-color: black;
+}
+#toggle:checked + .toggle_btn::before{
+    transform: translateX(35px);    
+    content: "🌙";
+}
+/* #toggle:checked ~ .body{
+    background-color:black;
+} */
 .innerCardContainer {
     display: flex;
     flex-direction: column;
